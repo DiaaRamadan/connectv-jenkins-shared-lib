@@ -2,6 +2,6 @@
 
 import com.jenkins.Maven.MavenVersion
 
-def call(String imageName, String path) {
+def call() {
     return new MavenVersion(this).incrementPatchVersion()
 }
