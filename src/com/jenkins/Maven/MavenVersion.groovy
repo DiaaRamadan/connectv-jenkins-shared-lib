@@ -12,7 +12,7 @@ class MavenVersion implements Serializable {
 
     def incrementPatchVersion(){
         script.echo "Increment app version..."
-        script.sh 'mvn build-helper:parse-version versions:set \
+        script.sh 'mvn -f ./backend build-helper:parse-version versions:set \
                         -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.nextIncrementalVersion} \
                         versions:commit'
     }
