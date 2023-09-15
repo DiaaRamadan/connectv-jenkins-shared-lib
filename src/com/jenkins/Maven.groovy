@@ -1,12 +1,12 @@
 #!/usr/bin/env groovy
 
-package com.jenkins.Maven
+package com.jenkins
 
-class MavenVersion implements Serializable {
+class Maven implements Serializable {
 
     def script
 
-    MavenVersion(script){
+    Maven(script){
         this.script = script
     }
 
@@ -15,6 +15,10 @@ class MavenVersion implements Serializable {
         script.sh 'mvn -f ./backend build-helper:parse-version versions:set \
                         -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.nextIncrementalVersion} \
                         versions:commit'
+    }
+
+    def mavenPackage(){
+        script.sh 'mvn -f ./backend clean package'
     }
 
 }
