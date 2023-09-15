@@ -17,7 +17,7 @@ class Maven implements Serializable {
                         versions:commit'
     }
 
-    def mavenPackage(){
+    def buildJar(){
         script.sh 'mvn -f ./backend clean package'
     }
 

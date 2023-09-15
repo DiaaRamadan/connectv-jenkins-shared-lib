@@ -3,5 +3,5 @@
 import com.jenkins.Maven
 
 def call() {
-    return new Maven(this).mavenPackage()
+    return new Maven(this).buildJar()
 }
