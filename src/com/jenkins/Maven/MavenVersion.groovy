@@ -2,11 +2,11 @@
 
 package com.jenkins.Maven
 
-class Maven implements Serializable {
+class MavenVersion implements Serializable {
 
     def script
 
-    Maven(script){
+    MavenVersion(script){
         this.script = script
     }
 
