@@ -22,7 +22,7 @@ class Git implements Serializable {
             script.sh "git remote set-url origin https://${script.PASS}@github.com/DiaaRamadan/connectv-jenkins-shared-lib.git"
             script.sh 'git add .'
             script.sh 'git commit -m "ci:Version bump"'
-            script.sh 'git fetch'
+            script.sh 'git pull origin master'
             script.sh 'git push origin HEAD:master'
         }
     }
