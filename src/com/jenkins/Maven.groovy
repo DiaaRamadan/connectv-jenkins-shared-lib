@@ -23,7 +23,7 @@ class Maven implements Serializable {
 
     def pomVersion(String path) {
         def pomContent = script.readFile(path) =~ '<version>(.+)</version>'
-        def version = pomContent[1]
+        def version = pomContent[1][1]
         return version
     }
 
